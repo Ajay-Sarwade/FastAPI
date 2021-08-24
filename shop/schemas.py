@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-
+from typing import Optional
 class Banner(BaseModel):
     url:str
 
@@ -9,7 +9,7 @@ class User(BaseModel):
     email:str
     password:str
 
-class Login(User):
+class Login(BaseModel):
     email:str
     password:str
     class Config():
@@ -23,3 +23,11 @@ class Products(BaseModel):
     size:str
     color:str
     review:int
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    email: Optional[str] = None

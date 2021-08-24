@@ -8,7 +8,7 @@ class Banner(Base):
     url=Column(String)
     
 
-class User(Base):
+class User(Base): 
     __tablename__="user"
     id=Column(Integer,primary_key=True,index=True)
     first_name=Column(String)
