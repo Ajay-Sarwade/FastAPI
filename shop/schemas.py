@@ -1,5 +1,8 @@
-from pydantic import BaseModel
+import logging
+from pydantic import BaseModel,validator
 from typing import Optional
+from . import main
+
 class Banner(BaseModel):
     url:str
 
@@ -23,11 +26,9 @@ class Products(BaseModel):
     size:str
     color:str
     review:int
+    
+    
 
-class Token(BaseModel):
-    access_token: str
-    token_type: str
-
-
-class TokenData(BaseModel):
-    email: Optional[str] = None
+class Item(BaseModel):
+    title: str
+    size: int
